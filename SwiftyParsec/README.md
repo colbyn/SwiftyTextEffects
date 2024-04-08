@@ -7,11 +7,14 @@ SwiftyParsec is a highly versatile and efficient parser combinator library for t
 
 ## Features
 
-- **Expressive and composable**: SwiftyParsec's parser combinators allow you to build sophisticated parsers by composing smaller, reusable ones.
-- **Efficient and performant**: The library is designed with performance in mind, ensuring your parsing tasks run quickly and without unnecessary overhead.
-- **Robust error handling**: SwiftyParsec provides detailed error reporting and context, making it easier to debug and refine your parsers.
+- **Composable**:
+    + Build complex parsers from simple, reusable components.
+    + SwiftyParsec's parser combinators allow you to build sophisticated parsers by composing smaller, reusable ones.
+- **Monadic Interface**: Leverage the power of monads for chaining parsing operations in a declarative manner.
+- **Rich State Management**: Track parsing progress and manage state effortlessly across parsing operations.
+- **Error Handling**: Capture and handle parsing errors seamlessly, improving debuggability and reliability.
+- **Position Tracking**: Annotate parsed characters with their positions for detailed error reporting and analysis.
 - **Comprehensive type safety**: The library's type system helps you catch errors at compile-time, ensuring your parsers are type-safe and less prone to runtime errors.
-- **Extensive documentation**: The API is thoroughly documented, with examples and explanations to help you get started and master the library.
 
 ## Getting Started
 
@@ -19,7 +22,10 @@ To use SwiftyParsec in your Swift project, you can either clone the repository a
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/your-username/SwiftyParsec.git", from: "1.0.0") // check git for the latest version 
+    .package(
+        url: "https://github.com/your-username/SwiftyParsec.git",
+        from: "1.0.0" // check git for the latest version 
+    )
 ]
 ```
 
@@ -28,14 +34,37 @@ Once you've set up the dependency, you can start using the library in your code:
 ```swift
 import SwiftyParsec
 
-let parser = SwiftyParsec.TextParser.token("hello").and(next: SwiftyParsec.TextParser.spaces).and(next: SwiftyParsec.TextParser.token("world"))
-let result = parser.evaluate(source: "hello  world")
-print(result) // Prints "(Optional(SwiftyParsec.Tuple(SwiftyParsec.Text(hello), SwiftyParsec.Text( world))), ParserState(...))"
+let parser = IO.TextParser
+    .token("hello")
+    .ignore(next: IO.TextParser.spaces)
+    .and(next: IO.TextParser.token("world"))
+let (result, unparsed) = parser.evaluate(source: "hello  world")
+print(result.asPrettyTree.format())
 ```
 
 ## Documentation
 
 Detailed documentation, including examples and usage guides, can be found in the [Documentation](/Documentation) directory.
+
+### Parser Monad (`IO.Parser<A>`)
+
+The heart of the framework, `IO.Parser<A>`, represents a parsing operation that can consume input and produce a result of type `A`. It encapsulates the logic for parsing tasks, allowing for easy composition and extension.
+
+### Parser State (`IO.State`)
+
+`IO.State` carries the current state of the parsing process ensuring that each parsing step is aware of its context.
+
+### Text (`IO.Text`)
+
+A recursive enumeration that models the input stream as a sequence of annotated characters. It supports efficient, non-destructive input consumption and provides detailed position information for each character.
+
+### Utility Types
+
+- Data Structures:
+    + `IO.Either<Left, Right>`: Represents values with two possibilities, commonly used for error handling.
+    + `IO.Tuple<A, B>`, `Triple<A, B, C>`, and `Quadruple<A, B, C, D>`: Facilitate grouping of multiple parsed values.
+    + Plus Many More...
+- Specialized parser typealiases (`IO.UnitParser`, `IO.TextParser`, `IO.CharParser`, etc.) for common parsing patterns.
 
 ## Contributing
 

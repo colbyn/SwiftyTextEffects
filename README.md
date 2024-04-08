@@ -1,6 +1,6 @@
 # Overview
 
-## Projects
+## Libraries & Packages
 
 | Name           | Description                                 | Path                                    | Primary Namespace |
 | -------------- | ------------------------------------------- | --------------------------------------- | --- |

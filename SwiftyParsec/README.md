@@ -23,8 +23,8 @@ To use SwiftyParsec in your Swift project, you can either clone the repository a
 ```swift
 dependencies: [
     .package(
-        url: "https://github.com/your-username/SwiftyParsec.git",
-        from: "1.0.0" // check git for the latest version 
+        url: "https://github.com/colbyn/SwiftyTextEffects.git",
+        from: TODO // check git for the latest version 
     )
 ]
 ```

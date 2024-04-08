@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,10 @@
 		F442FCDA2BC4A79B0024EE2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F442FCD92BC4A79B0024EE2D /* ContentView.swift */; };
 		F442FCDC2BC4A79D0024EE2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F442FCDB2BC4A79D0024EE2D /* Assets.xcassets */; };
 		F442FCE02BC4A79D0024EE2D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F442FCDF2BC4A79D0024EE2D /* Preview Assets.xcassets */; };
+		F442FCE92BC4ACC80024EE2D /* SwiftyUtils in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCE82BC4ACC80024EE2D /* SwiftyUtils */; };
+		F442FCEC2BC4ACDA0024EE2D /* SwiftyDebug in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCEB2BC4ACDA0024EE2D /* SwiftyDebug */; };
+		F442FCEF2BC4ACE80024EE2D /* SwiftyParsec in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCEE2BC4ACE80024EE2D /* SwiftyParsec */; };
+		F442FCF22BC4ACF60024EE2D /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCF12BC4ACF60024EE2D /* SwiftyMarkdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F442FCEC2BC4ACDA0024EE2D /* SwiftyDebug in Frameworks */,
+				F442FCEF2BC4ACE80024EE2D /* SwiftyParsec in Frameworks */,
+				F442FCE92BC4ACC80024EE2D /* SwiftyUtils in Frameworks */,
+				F442FCF22BC4ACF60024EE2D /* SwiftyMarkdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +101,12 @@
 			dependencies = (
 			);
 			name = MarkdownPreview;
+			packageProductDependencies = (
+				F442FCE82BC4ACC80024EE2D /* SwiftyUtils */,
+				F442FCEB2BC4ACDA0024EE2D /* SwiftyDebug */,
+				F442FCEE2BC4ACE80024EE2D /* SwiftyParsec */,
+				F442FCF12BC4ACF60024EE2D /* SwiftyMarkdown */,
+			);
 			productName = MarkdownPreview;
 			productReference = F442FCD42BC4A79B0024EE2D /* MarkdownPreview.app */;
 			productType = "com.apple.product-type.application";
@@ -121,6 +135,12 @@
 				Base,
 			);
 			mainGroup = F442FCCB2BC4A79B0024EE2D;
+			packageReferences = (
+				F442FCE72BC4ACC80024EE2D /* XCLocalSwiftPackageReference "../SwiftyUtils" */,
+				F442FCEA2BC4ACDA0024EE2D /* XCLocalSwiftPackageReference "../SwiftyDebug" */,
+				F442FCED2BC4ACE80024EE2D /* XCLocalSwiftPackageReference "../SwiftyParsec" */,
+				F442FCF02BC4ACF60024EE2D /* XCLocalSwiftPackageReference "../SwiftyMarkdown" */,
+			);
 			productRefGroup = F442FCD52BC4A79B0024EE2D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -369,6 +389,44 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		F442FCE72BC4ACC80024EE2D /* XCLocalSwiftPackageReference "../SwiftyUtils" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftyUtils;
+		};
+		F442FCEA2BC4ACDA0024EE2D /* XCLocalSwiftPackageReference "../SwiftyDebug" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftyDebug;
+		};
+		F442FCED2BC4ACE80024EE2D /* XCLocalSwiftPackageReference "../SwiftyParsec" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftyParsec;
+		};
+		F442FCF02BC4ACF60024EE2D /* XCLocalSwiftPackageReference "../SwiftyMarkdown" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftyMarkdown;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F442FCE82BC4ACC80024EE2D /* SwiftyUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyUtils;
+		};
+		F442FCEB2BC4ACDA0024EE2D /* SwiftyDebug */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyDebug;
+		};
+		F442FCEE2BC4ACE80024EE2D /* SwiftyParsec */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyParsec;
+		};
+		F442FCF12BC4ACF60024EE2D /* SwiftyMarkdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyMarkdown;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F442FCCC2BC4A79B0024EE2D /* Project object */;
 }

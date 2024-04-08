@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftyUtils
 
 @main
 struct Main: App {

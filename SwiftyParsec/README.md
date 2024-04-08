@@ -1,4 +1,4 @@
-# SwiftyParsec: A Powerful Parser Combinator Library for Swift
+# SwiftyParsec: A Powerful Parser Combinator Library for Swift (formerly called `MonadoParser`)
 
 [![Swift Version](https://img.shields.io/badge/Swift-5.7-orange.svg)](https://swift.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)

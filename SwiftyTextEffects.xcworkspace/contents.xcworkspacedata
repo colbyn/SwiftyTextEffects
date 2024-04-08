@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:MarkdownPreview/MarkdownPreview.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftyMarkdown">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftyParsec">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftyDebug">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftyUtils">
+   </FileRef>
+</Workspace>

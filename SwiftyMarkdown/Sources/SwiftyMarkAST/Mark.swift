@@ -9,6 +9,7 @@ import Foundation
 import SwiftyParsec
 import SwiftyDebug
 
+/// The root Markdown AST for both inline and block/display nodes.
 public enum Mark {
     case inline(Inline), block(Block)
     
@@ -38,4 +39,16 @@ extension Mark.Inline {
         "~",
         "`",
     ]
+}
+
+extension Mark {
+    public static func parse(source: String) -> [Self] {
+        let (result1, state) = Self.some(env: .root).evaluate(source: source)
+        var result2 = result1 ?? []
+        let unparsed = state.text
+        if !unparsed.isEmpty {
+            result2.append(.inline(.raw(unparsed)))
+        }
+        return result2
+    }
 }

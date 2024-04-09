@@ -15,6 +15,7 @@
 		F442FCEC2BC4ACDA0024EE2D /* SwiftyDebug in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCEB2BC4ACDA0024EE2D /* SwiftyDebug */; };
 		F442FCEF2BC4ACE80024EE2D /* SwiftyParsec in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCEE2BC4ACE80024EE2D /* SwiftyParsec */; };
 		F442FCF22BC4ACF60024EE2D /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCF12BC4ACF60024EE2D /* SwiftyMarkdown */; };
+		F442FCF52BC4B9700024EE2D /* SwiftyMarkAST in Frameworks */ = {isa = PBXBuildFile; productRef = F442FCF42BC4B9700024EE2D /* SwiftyMarkAST */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F442FCEC2BC4ACDA0024EE2D /* SwiftyDebug in Frameworks */,
+				F442FCF52BC4B9700024EE2D /* SwiftyMarkAST in Frameworks */,
 				F442FCEF2BC4ACE80024EE2D /* SwiftyParsec in Frameworks */,
 				F442FCE92BC4ACC80024EE2D /* SwiftyUtils in Frameworks */,
 				F442FCF22BC4ACF60024EE2D /* SwiftyMarkdown in Frameworks */,
@@ -106,6 +108,7 @@
 				F442FCEB2BC4ACDA0024EE2D /* SwiftyDebug */,
 				F442FCEE2BC4ACE80024EE2D /* SwiftyParsec */,
 				F442FCF12BC4ACF60024EE2D /* SwiftyMarkdown */,
+				F442FCF42BC4B9700024EE2D /* SwiftyMarkAST */,
 			);
 			productName = MarkdownPreview;
 			productReference = F442FCD42BC4A79B0024EE2D /* MarkdownPreview.app */;
@@ -139,7 +142,6 @@
 				F442FCE72BC4ACC80024EE2D /* XCLocalSwiftPackageReference "../SwiftyUtils" */,
 				F442FCEA2BC4ACDA0024EE2D /* XCLocalSwiftPackageReference "../SwiftyDebug" */,
 				F442FCED2BC4ACE80024EE2D /* XCLocalSwiftPackageReference "../SwiftyParsec" */,
-				F442FCF02BC4ACF60024EE2D /* XCLocalSwiftPackageReference "../SwiftyMarkdown" */,
 			);
 			productRefGroup = F442FCD52BC4A79B0024EE2D /* Products */;
 			projectDirPath = "";
@@ -403,10 +405,6 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SwiftyParsec;
 		};
-		F442FCF02BC4ACF60024EE2D /* XCLocalSwiftPackageReference "../SwiftyMarkdown" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SwiftyMarkdown;
-		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -425,6 +423,10 @@
 		F442FCF12BC4ACF60024EE2D /* SwiftyMarkdown */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftyMarkdown;
+		};
+		F442FCF42BC4B9700024EE2D /* SwiftyMarkAST */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftyMarkAST;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

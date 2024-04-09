@@ -7,8 +7,8 @@
 
 import Foundation
 
-extension Mark.Inline: Stringify {
-    internal var stringify: String {
+extension Mark.Inline: StringifyMarkdown {
+    public var stringify: String {
         switch self {
         case .plainText(let x): return x.stringify
         case .link(let x): return x.stringify
@@ -26,91 +26,91 @@ extension Mark.Inline: Stringify {
     }
 }
 
-extension Mark.Inline.PlainText: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.PlainText: StringifyMarkdown {
+    public var stringify: String {
         self.value.asString
     }
 }
-extension Mark.Inline.Link: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Link: StringifyMarkdown {
+    public var stringify: String {
         let text = "[\(text.content.map { $0.stringify })]"
         let destination = destination.stringify
         let title = title.stringify
         return "\(text)(\(destination) \(title))"
     }
 }
-extension Mark.Inline.Image: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Image: StringifyMarkdown {
+    public var stringify: String {
         let link = link.stringify
         return "!\(link)"
     }
 }
-extension Mark.Inline.Emphasis: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Emphasis: StringifyMarkdown {
+    public var stringify: String {
         let startDelimiter = startDelimiter.stringify
         let content = content.map { $0.stringify }.joined(separator: "")
         let endDelimiter = endDelimiter.stringify
         return "\(startDelimiter)\(content)\(endDelimiter)"
     }
 }
-extension Mark.Inline.Highlight: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Highlight: StringifyMarkdown {
+    public var stringify: String {
         let startDelimiter = startDelimiter.stringify
         let content = content.map { $0.stringify }.joined(separator: "")
         let endDelimiter = endDelimiter.stringify
         return "\(startDelimiter)\(content)\(endDelimiter)"
     }
 }
-extension Mark.Inline.Strikethrough: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Strikethrough: StringifyMarkdown {
+    public var stringify: String {
         let startDelimiter = startDelimiter.stringify
         let content = content.map { $0.stringify }.joined(separator: "")
         let endDelimiter = endDelimiter.stringify
         return "\(startDelimiter)\(content)\(endDelimiter)"
     }
 }
-extension Mark.Inline.Subscript: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Subscript: StringifyMarkdown {
+    public var stringify: String {
         let startDelimiter = startDelimiter.stringify
         let content = content.map { $0.stringify }.joined(separator: "")
         let endDelimiter = endDelimiter.stringify
         return "\(startDelimiter)\(content)\(endDelimiter)"
     }
 }
-extension Mark.Inline.Superscript: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Superscript: StringifyMarkdown {
+    public var stringify: String {
         let startDelimiter = startDelimiter.stringify
         let content = content.map { $0.stringify }.joined(separator: "")
         let endDelimiter = endDelimiter.stringify
         return "\(startDelimiter)\(content)\(endDelimiter)"
     }
 }
-extension Mark.Inline.InlineCode: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.InlineCode: StringifyMarkdown {
+    public var stringify: String {
         let startDelimiter = startDelimiter.stringify
         let content = content.stringify
         let endDelimiter = endDelimiter.stringify
         return "\(startDelimiter)\(content)\(endDelimiter)"
     }
 }
-extension Mark.Inline.InDoubleQuotes: Stringify where Content: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.InDoubleQuotes: StringifyMarkdown where Content: StringifyMarkdown {
+    public var stringify: String {
         let openQuote = startDelimiter.stringify
         let content = content.stringify
         let closeQuote = endDelimiter.stringify
         return "\(openQuote)\(content)\(closeQuote)"
     }
 }
-extension Mark.Inline.InSquareBrackets: Stringify where Content: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.InSquareBrackets: StringifyMarkdown where Content: StringifyMarkdown {
+    public var stringify: String {
         let openSquareBracket = openDelimiter.stringify
         let content = content.stringify
         let closeSquareBracket = closeDelimiter.stringify
         return "\(openSquareBracket)\(content)\(closeSquareBracket)"
     }
 }
-extension Mark.Inline.Latex: Stringify {
-    internal var stringify: String {
+extension Mark.Inline.Latex: StringifyMarkdown {
+    public var stringify: String {
         let start = startDelimiter.stringify
         let content = content.stringify
         let close = endDelimiter.stringify

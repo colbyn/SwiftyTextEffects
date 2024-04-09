@@ -8,22 +8,23 @@
 import Foundation
 import SwiftyParsec
 
-internal protocol Stringify {
+/// Internal for now.
+public protocol StringifyMarkdown {
     var stringify: String { get }
 }
 
-extension IO.Text: Stringify {
+extension IO.Text: StringifyMarkdown {
     public var stringify: String {
         asString
     }
 }
-extension IO.Text.FatChar: Stringify {
+extension IO.Text.FatChar: StringifyMarkdown {
     public var stringify: String {
         singleton.asString
     }
 }
-extension Optional: Stringify where Wrapped: Stringify {
-    internal var stringify: String {
+extension Optional: StringifyMarkdown where Wrapped: StringifyMarkdown {
+    public var stringify: String {
         if let x = self {
             return x.stringify
         }

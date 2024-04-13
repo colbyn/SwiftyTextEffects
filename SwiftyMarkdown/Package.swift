@@ -18,6 +18,7 @@ let package = Package(
         .package(name: "SwiftyUtils", path: "../SwiftyUtils"),
         .package(name: "SwiftyDebug", path: "../SwiftyDebug"),
         .package(name: "SwiftyParsec", path: "../SwiftyParsec"),
+        .package(name: "SwiftyDesignFramework", path: "../SwiftyDesignFramework"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -37,6 +38,7 @@ let package = Package(
                 "SwiftyParsec",
                 "SwiftyDebug",
                 "SwiftyMarkAST",
+                "SwiftyDesignFramework",
             ]
         ),
         .testTarget(

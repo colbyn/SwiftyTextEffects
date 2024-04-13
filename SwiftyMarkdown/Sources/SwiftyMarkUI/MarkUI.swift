@@ -6,6 +6,7 @@
 //
 
 import Foundation
-import SwiftyMarkAST
+
+public struct MarkUI {}
 
 

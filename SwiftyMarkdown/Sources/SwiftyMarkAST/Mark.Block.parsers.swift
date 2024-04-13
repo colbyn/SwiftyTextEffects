@@ -46,7 +46,7 @@ extension Mark.Block.Heading {
         ])
         let content = Mark.Inline.many(env: env)
         return IO.Tuple
-            .join(f: hashes, g: content)
+            .join(f: hashes.spacedRight, g: content)
             .map {
                 Self(hashTokens: $0.a, content: $0.b)
             }
@@ -100,7 +100,7 @@ extension Mark.Block.Blockquote {
     public static var start: IO.TextParser {
         return IO.TextParser
             .token(">")
-            .ignore(next: IO.CharParser.space)
+            .ignore(next: IO.CharParser.space.optional)
     }
 }
 extension Mark.Block.FencedCodeBlock {

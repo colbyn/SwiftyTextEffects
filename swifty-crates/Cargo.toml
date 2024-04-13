@@ -1,0 +1,3 @@
+[workspace]
+members = [ "dev", "markdown-parser", "tree-formatter" ]
+resolver = "2"

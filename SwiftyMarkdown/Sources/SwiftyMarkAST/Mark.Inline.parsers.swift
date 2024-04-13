@@ -22,6 +22,7 @@ extension Mark.Inline {
             Mark.Inline.Superscript.parser(env: env).map(Self.sup),
             Mark.Inline.InlineCode.parser(env: env).map(Self.inlineCode),
             Mark.Inline.PlainText.parser(env: env).map(Mark.Inline.plainText),
+            Self.anyChar,
         ])
     }
     public static func many(env: Mark.Environment) -> IO.Parser<[Self]> {
@@ -52,6 +53,11 @@ extension Mark.Inline {
     public static var lineBreak: IO.Parser<Self> {
         IO.CharParser.newline
             .map(Mark.Inline.lineBreak)
+    }
+    private static var anyChar: IO.Parser<Self> {
+        IO.CharParser.char { !$0.isNewline }
+            .map(IO.Text.init(singleton:))
+            .map(Mark.Inline.raw)
     }
 }
 

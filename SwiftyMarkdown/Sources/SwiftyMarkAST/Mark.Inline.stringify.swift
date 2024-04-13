@@ -36,6 +36,9 @@ extension Mark.Inline.Link: StringifyMarkdown {
         let text = "[\(text.content.map { $0.stringify })]"
         let destination = destination.stringify
         let title = title.stringify
+        if title.isEmpty {
+            return "\(text)(\(destination))"
+        }
         return "\(text)(\(destination) \(title))"
     }
 }

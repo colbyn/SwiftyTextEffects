@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MarkdownPreview/MarkdownPreview.xcodeproj">
+      location = "group:/Users/colbyn/Prototype/Swift/SwiftyTextEffects/MarkdownPreview/SwiftyMarkdownPreview.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/colbyn/Prototype/Swift/SwiftyTextEffects/SwiftyDesignFramework">
    </FileRef>
    <FileRef
       location = "group:SwiftyMarkdown">
